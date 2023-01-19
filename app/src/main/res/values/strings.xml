@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">20230119-LuisViruena-NYCSchools</string>
+    <string name="app_title">NYCSchools</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
 </resources>
