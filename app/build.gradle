@@ -6,6 +6,7 @@ plugins {
 
 android {
     namespace 'com.outerspace.a20230119_luisviruena_nycschools'
+
     compileSdk 33
 
     defaultConfig {
@@ -28,6 +29,16 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
+
+    buildscript {
+        repositories {
+            mavenCentral()
+        }
+        dependencies {
+            classpath("androidx.navigation:navigation-safe-args-gradle-plugin:2.5.3")
+        }
+    }
+
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
