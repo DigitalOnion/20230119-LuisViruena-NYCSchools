@@ -3,5 +3,7 @@
     <string name="app_title">NYCSchools</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="about_title">About NYCSchools</string>
+    <string name="about_message">Author:Luis Viruena\n\nPlease enjoy Luis\' solution to the NYCSchools Coding Challenge for Wells Fargo.</string>
 
 </resources>
