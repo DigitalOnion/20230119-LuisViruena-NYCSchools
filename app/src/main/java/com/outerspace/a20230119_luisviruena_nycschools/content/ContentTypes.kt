@@ -1,5 +1,35 @@
 package com.outerspace.a20230119_luisviruena_nycschools.content
 
+class SatScores {
+    @com.squareup.moshi.Json(name = "dbn")
+    lateinit var dbn: String
+    @com.squareup.moshi.Json(name = "school_name")
+    lateinit var schoolName: String
+    @com.squareup.moshi.Json(name = "num_of_sat_test_takers")
+    lateinit var numOfSatTestTakers: String
+    @com.squareup.moshi.Json(name = "sat_critical_reading_avg_score")
+    lateinit var satCriticalReadingAvgScore: String
+    @com.squareup.moshi.Json(name = "sat_math_avg_score")
+    lateinit var satMathAvgScore: String
+    @com.squareup.moshi.Json(name = "sat_writing_avg_score")
+    lateinit var satWritingAvgScore: String
+}
+
+class SchoolShort {
+    @com.squareup.moshi.Json(name = "dbn")
+    lateinit var dbn: String
+    @com.squareup.moshi.Json(name = "school_name")
+    lateinit var schoolName: String
+    @com.squareup.moshi.Json(name = "primary_address_line_1")
+    lateinit var primaryAddressLine1: String
+    @com.squareup.moshi.Json(name = "city")
+    lateinit var city: String
+    @com.squareup.moshi.Json(name = "state_code")
+    lateinit var stateCode: String
+    @com.squareup.moshi.Json(name = "zip")
+    lateinit var zip: String
+}
+
 class School {
     @com.squareup.moshi.Json(name = "dbn")
     lateinit var dbn: String

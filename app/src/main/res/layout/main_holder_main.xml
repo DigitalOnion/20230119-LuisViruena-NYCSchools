@@ -12,22 +12,50 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="@drawable/card_border_shape"
+        android:layout_marginBottom="8dp"
         >
 
         <TextView
             android:id="@+id/textSchoolName"
             tools:text="Greatest High School"
+            android:textStyle="bold"
+            android:textSize="16sp"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toStartOf="@id/detailButton"/>
 
+        <TextView
+            android:id="@+id/textAddress1"
+            tools:text="1234 Test Avenue NE"
+            android:textStyle="normal"
+            android:layout_marginStart="32dp"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/textSchoolName"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/detailButton"/>
+
+        <TextView
+            android:id="@+id/textAddress2"
+            tools:text="Manhattan NY, 93819"
+            android:textStyle="normal"
+            android:layout_marginStart="32dp"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/textAddress1"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/detailButton"/>
+
         <androidx.constraintlayout.utils.widget.ImageFilterButton
             android:id="@+id/detailButton"
-            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintTop_toTopOf="@id/textSchoolName"
+            app:layout_constraintBottom_toBottomOf="@id/textAddress2"
             app:layout_constraintEnd_toEndOf="parent"
             android:src="@drawable/ic_baseline_arrow_forward_24"
+            android:background="@android:color/transparent"
             android:layout_width="48dp"
             android:layout_height="48dp"/>
 

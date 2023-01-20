@@ -23,7 +23,22 @@ private val retrofit = Retrofit.Builder()
 
 interface ContentApiService {
     @GET("resource/s3k6-pzi2.json")
-    suspend fun getMainListing(@Query("\$\$app_token") apiKey: String) : List<School>
+    suspend fun getMainListing(
+        @Query("\$\$app_token") appToken: String,
+        @Query("\$select") selectFields: String,
+    ) : List<SchoolShort>
+
+    @GET("resource/s3k6-pzi2.json")
+    suspend fun getSchoolsByDbn(
+        @Query("\$\$app_token") appToken: String,
+        @Query("dbn") dbn: String,
+    ) : List<School>
+
+    @GET("resource/f9bf-2cp4.json")
+    suspend fun getSatByDbn(
+        @Query("\$\$app_token") appToken: String,
+        @Query("dbn") dbn: String,
+    ) : List<SatScores>
 }
 
 object ContentApi {
@@ -31,7 +46,15 @@ object ContentApi {
         retrofit.create(ContentApiService::class.java)
     }
 
-    suspend fun getMainListing(): List<School> {
-        return retrofitService.getMainListing(APP_TOKEN)
+    suspend fun getMainListing(): List<SchoolShort> {
+        return retrofitService.getMainListing(APP_TOKEN, "dbn,school_name,primary_address_line_1,city,state_code,zip")
+    }
+
+    suspend fun getSchools(dbn: String): List<School> {
+        return retrofitService.getSchoolsByDbn(APP_TOKEN, dbn)
+    }
+
+    suspend fun getSatScores(dbn: String): List<SatScores> {
+        return retrofitService.getSatByDbn(APP_TOKEN, dbn)
     }
 }

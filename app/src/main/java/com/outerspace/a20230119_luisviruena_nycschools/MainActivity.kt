@@ -6,7 +6,6 @@ import androidx.activity.viewModels
 import androidx.lifecycle.lifecycleScope
 import com.outerspace.a20230119_luisviruena_nycschools.content.ContentApi
 import com.outerspace.a20230119_luisviruena_nycschools.content.ContentViewModel
-import com.outerspace.a20230119_luisviruena_nycschools.content.School
 import kotlinx.coroutines.launch
 
 class MainActivity : AppCompatActivity() {

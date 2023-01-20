@@ -3,7 +3,9 @@ package com.outerspace.a20230119_luisviruena_nycschools.view
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
+import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
+import com.outerspace.a20230119_luisviruena_nycschools.MainFragmentDirections
 import com.outerspace.a20230119_luisviruena_nycschools.R
 import com.outerspace.a20230119_luisviruena_nycschools.content.ContentViewModel
 import com.outerspace.a20230119_luisviruena_nycschools.databinding.MainHolderMainBinding
@@ -24,12 +26,16 @@ class MainRecyclerAdapter(private val viewModel: ContentViewModel):
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val dataSet = viewModel.mutableMainListing.value!!
-        holder.binding.textSchoolName.text = dataSet[position].schoolName
+        val row = dataSet[position]
+        holder.binding.textSchoolName.text = row.schoolName
+        holder.binding.textAddress1.text = row.primaryAddressLine1
+        holder.binding.textAddress2.text = "${row.city}, ${row.stateCode}. ${row.zip}"
+
         holder.binding.detailButton.setOnClickListener {
             run {
-//                val id = dataSet[position].itemId
-//                val action = ListingFragmentDirections.actionOpenDetailFragment(id)
-//                holder.binding.root.findNavController().navigate(action)
+                val dbn = dataSet[position].dbn
+                val action = MainFragmentDirections.actionMainFragmentToDetailFragment(dbn)
+                holder.binding.root.findNavController().navigate(action)
             }
         }
     }

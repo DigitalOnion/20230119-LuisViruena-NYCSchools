@@ -18,5 +18,10 @@
         android:id="@+id/detailFragment"
         android:name="com.outerspace.a20230119_luisviruena_nycschools.DetailFragment"
         android:label="fragment_detail"
-        tools:layout="@layout/fragment_detail" />
+        tools:layout="@layout/fragment_detail">
+        <argument
+            android:name="dbn"
+            app:argType="string"
+            android:defaultValue="" />
+    </fragment>
 </navigation>

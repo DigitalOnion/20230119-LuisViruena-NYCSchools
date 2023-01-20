@@ -5,7 +5,7 @@ import androidx.lifecycle.viewModelScope
 import kotlinx.coroutines.launch
 
 class ContentViewModel: ViewModel() {
-    val mutableMainListing: MutableLiveData<List<School>> by lazy {
-        MutableLiveData<List<School>>()
+    val mutableMainListing: MutableLiveData<List<SchoolShort>> by lazy {
+        MutableLiveData<List<SchoolShort>>()
     }
 }
