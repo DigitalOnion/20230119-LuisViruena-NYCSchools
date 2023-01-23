@@ -8,9 +8,10 @@ import androidx.recyclerview.widget.RecyclerView
 import com.outerspace.a20230119_luisviruena_nycschools.MainFragmentDirections
 import com.outerspace.a20230119_luisviruena_nycschools.R
 import com.outerspace.a20230119_luisviruena_nycschools.content.ContentViewModel
+import com.outerspace.a20230119_luisviruena_nycschools.content.SchoolShort
 import com.outerspace.a20230119_luisviruena_nycschools.databinding.MainHolderMainBinding
 
-class MainRecyclerAdapter(private val viewModel: ContentViewModel):
+class MainRecyclerAdapter(private val dataSet: List<SchoolShort>):
     RecyclerView.Adapter<MainRecyclerAdapter.ViewHolder>() {
         class ViewHolder(binding: MainHolderMainBinding): RecyclerView.ViewHolder(binding.root) {
             var binding: MainHolderMainBinding
@@ -25,7 +26,6 @@ class MainRecyclerAdapter(private val viewModel: ContentViewModel):
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        val dataSet = viewModel.mutableMainListing.value!!
         val row = dataSet[position]
         holder.binding.textSchoolName.text = row.schoolName
         holder.binding.textAddress1.text = row.primaryAddressLine1
@@ -41,6 +41,6 @@ class MainRecyclerAdapter(private val viewModel: ContentViewModel):
     }
 
     override fun getItemCount(): Int {
-        return viewModel.mutableMainListing.value!!.size
+        return dataSet.size
     }
 }

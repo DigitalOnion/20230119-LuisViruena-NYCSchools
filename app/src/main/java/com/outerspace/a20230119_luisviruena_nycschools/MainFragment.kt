@@ -28,7 +28,7 @@ class MainFragment : MainInterface, Fragment() {
 
         val viewModel: ContentViewModel by activityViewModels()
         viewModel.mutableMainListing.observe(viewLifecycleOwner) { run {
-            binding.recycler.adapter = MainRecyclerAdapter(viewModel)
+            binding.recycler.adapter = MainRecyclerAdapter(viewModel.mutableMainListing.value!!)
         }}
 
         return binding.root
